@@ -3,7 +3,7 @@ import requests
 
 url = 'https://adventofcode.com/2020/day/1/input'
 headers = {
-'Cookie': '_gid=GA1.2.821970174.1607045140; session=53616c7465645f5fabc9595d7bea68a83b1460841ec767588a9089728aad80fbd44e2a536071c9608fd643686ad85480; _ga=GA1.2.1841561583.1607045140',
+'Cookie': '',
 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
 'Accept-Encoding': 'br, gzip, deflate',
 'Host': 'adventofcode.com',
