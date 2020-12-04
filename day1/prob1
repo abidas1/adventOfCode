@@ -1,0 +1,29 @@
+from lxml import html
+import requests
+
+url = 'https://adventofcode.com/2020/day/1/input'
+headers = {
+'Cookie': '_gid=GA1.2.821970174.1607045140; session=53616c7465645f5fabc9595d7bea68a83b1460841ec767588a9089728aad80fbd44e2a536071c9608fd643686ad85480; _ga=GA1.2.1841561583.1607045140',
+'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+'Accept-Encoding': 'br, gzip, deflate',
+'Host': 'adventofcode.com',
+'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1.2 Safari/605.1.15',
+'Accept-Language': 'en-us',
+'Referer': 'https://adventofcode.com/2020/day/1',
+'Connection': 'keep-alive',
+}
+
+page = requests.get(url, headers=headers)
+tree = html.fromstring(page.content)
+
+expenseReport = page.text.splitlines()
+
+for expense in expenseReport:
+    for expense2 in expenseReport[1:]:
+        if(int(expense) + int(expense2) == 2020):
+            number1 = int(expense)
+            number2 = int(expense2)
+            break
+
+answer = number1 * number2
+print(answer)
