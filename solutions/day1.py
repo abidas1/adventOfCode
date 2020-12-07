@@ -1,4 +1,3 @@
-from lxml import html
 import requests
 
 url = 'https://adventofcode.com/2020/day/1/input'
@@ -14,7 +13,6 @@ headers = {
 }
 
 page = requests.get(url, headers=headers)
-tree = html.fromstring(page.content)
 
 expenseReport = sorted(list(map(int, page.text.splitlines())))
 
